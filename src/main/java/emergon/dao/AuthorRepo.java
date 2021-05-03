@@ -15,4 +15,5 @@ public interface AuthorRepo extends JpaRepository<Author, Integer> {
     @Query("Select a FROM Author a WHERE a.name LIKE CONCAT('%',:name,'%')")
     public List<Author> findByName(@Param("name") String name);
     
+    public Author getByName(String name);
 }
